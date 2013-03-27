@@ -90,6 +90,11 @@ namespace RestSharp
 			}
 		}
 
+        /// <summary>
+        /// Close connection, disable persistent
+        /// </summary>
+        public bool CloseConnection { get; set; }
+
 		/// <summary>
 		/// UserAgent to be sent with request
 		/// </summary>

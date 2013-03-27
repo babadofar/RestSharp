@@ -67,6 +67,8 @@ namespace RestSharp
         HttpResponse AsGet(string httpMethod);
 
 		IWebProxy Proxy { get; set; }
+
+	    bool CloseConnection { get; set; }
 #endif
 	}
 }

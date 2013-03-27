@@ -387,6 +387,10 @@ namespace RestSharp
 				webRequest.UserAgent = UserAgent;
 			}
 #endif
+            if (CloseConnection)
+            {
+                webRequest.KeepAlive = false;
+            }
 
 #if FRAMEWORK
 			if(ClientCertificates != null)

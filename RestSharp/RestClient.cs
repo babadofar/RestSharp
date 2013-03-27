@@ -172,6 +172,11 @@ namespace RestSharp
 		/// </summary>
 		public int Timeout { get; set; }
 
+        /// <summary>
+        /// CloseConnection if you not want persistent connections
+        /// </summary>
+        public bool CloseConnection { get; set; }
+
 		/// <summary>
 		/// Whether to invoke async callbacks using the SynchronizationContext.Current captured when invoked
 		/// </summary>
@@ -297,6 +302,7 @@ namespace RestSharp
 
 			var userAgent = UserAgent ?? http.UserAgent;
 			http.UserAgent = userAgent.HasValue() ? userAgent : "RestSharp " + version.ToString();
+		    if (CloseConnection) http.CloseConnection = true;
 
 			var timeout = request.Timeout > 0 ? request.Timeout : Timeout;
 			if (timeout > 0)

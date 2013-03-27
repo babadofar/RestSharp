@@ -74,6 +74,8 @@ namespace RestSharp
 		IRestResponse<T> Execute<T>(IRestRequest request) where T : new();
 		
 		IWebProxy Proxy { get; set; }
+
+	    bool CloseConnection { get; set; }
 #endif
 
 		Uri BuildUri(IRestRequest request);

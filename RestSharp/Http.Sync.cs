@@ -228,6 +228,11 @@ namespace RestSharp
 			{
 				webRequest.UserAgent = UserAgent;
 			}
+            if (CloseConnection)
+            {
+                webRequest.KeepAlive = false;
+                
+            }
 
 			if(Timeout != 0)
 			{
